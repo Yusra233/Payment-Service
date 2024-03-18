@@ -37,6 +37,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>models</groupId>
+			<artifactId>Booking</artifactId>
+			<version>1.0.32-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

@@ -1,10 +1,12 @@
-package com.example.PaymentService.Controller;
+package com.example.PaymentService.controller;
 
-import com.example.PaymentService.Service.PaymentService;
+import com.example.PaymentService.service.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.example.model.PaymentRequest;
+
 
 @RestController
 @RequestMapping("/Payment")
@@ -18,8 +20,8 @@ public class PaymentController {
     }
 
     @PostMapping("/pay")
-    public String pay(@RequestParam String serviceName,@RequestParam double price,@RequestParam String currency){
+    public PaymentRequest pay(@RequestBody PaymentRequest paymentRequest){
        logger.info("Payment Done Successfully");
-        return paymentService.processPayment(serviceName,price,currency);
+        return paymentService.processPayment(paymentRequest);
     }
 }
